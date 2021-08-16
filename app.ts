@@ -1,4 +1,5 @@
 import firebase from 'firebase';
+import data from './data.json';
 
 const firebaseConfig = {
     apiKey: 'AIzaSyBLndwQkXf9rqkhZ7-xUsLsFLXyEjtzWpY',
@@ -14,9 +15,27 @@ const firebaseConfig = {
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const firestore = firebaseApp.firestore();
 
-firestore
-    .collection('places')
-    .get()
-    .then((qs) => {
-        qs.docs.forEach((d) => console.log(d.data()));
+const COLLECTION = 'places';
+
+Object.keys(data.places).forEach((id) => {
+    const raw = (data.places as any)[id];
+    const place = { ...raw };
+
+    Object.keys(place).forEach((k) => {
+        if (place[k] === '') delete place[k];
+        if (Array.isArray(place[k])) delete place[k];
     });
+
+    place.markerCoordinates = new firebase.firestore.GeoPoint(
+        raw.markerCoordinates.split(',')[0],
+        raw.markerCoordinates.split(',')[1]
+    );
+
+    if (raw.geometry) {
+        place.geometry = raw.geometry.map(
+            (g: any) => new firebase.firestore.GeoPoint(g[0], g[1])
+        );
+    }
+
+    firestore.collection(COLLECTION).doc(id).set(place);
+});
