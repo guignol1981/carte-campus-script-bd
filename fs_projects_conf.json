@@ -1,0 +1,32 @@
+{
+   "monportailTest":{
+      "apiKey":"AIzaSyBLndwQkXf9rqkhZ7-xUsLsFLXyEjtzWpY",
+      "authDomain":"monportail-test.firebaseapp.com",
+      "databaseURL":"https://monportail-test.firebaseio.com",
+      "projectId":"monportail-test",
+      "storageBucket":"monportail-test.appspot.com",
+      "messagingSenderId":"126796368333",
+      "appId":"1:126796368333:web:1c9ed7d646425755d21c84",
+      "measurementId":"G-9X57FKCVLQ"
+   },
+   "monportailApp":{
+      "apiKey":"AIzaSyCEUTJWUDioXdjfG1u0BJP1UdkgJg4f8GQ",
+      "authDomain":"monportail-app.firebaseapp.com",
+      "databaseURL":"https://monportail-app.firebaseio.com",
+      "projectId":"monportail-app",
+      "storageBucket":"monportail-app.appspot.com",
+      "messagingSenderId":"210893614826",
+      "appId":"1:210893614826:web:766f27f329fa92f8c9f193",
+      "measurementId":"G-2LLYM67YG3"
+   },
+   "monportailProd":{
+      "apiKey":"AIzaSyAjZV_n6Uy-KQJLra9a8qGbv-rRwik20IY",
+      "authDomain":"monportail-prod.firebaseapp.com",
+      "databaseURL":"https://monportail-prod.firebaseio.com",
+      "projectId":"monportail-prod",
+      "storageBucket":"monportail-prod.appspot.com",
+      "messagingSenderId":"988029514838",
+      "appId":"1:988029514838:web:b7ad275a32b5b5fff037f7",
+      "measurementId":"G-S0CZQSPLCM"
+   }
+}
